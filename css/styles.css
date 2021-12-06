@@ -556,14 +556,14 @@ body {
 /* !--------------------------footer------------------------------------------*/
 
 .footer {
-    padding-top: 60px;
+  padding-top: 60px;
   padding-bottom: 60px;
   background-color: var(--footer-bg-color);
 }
 
 .footer-container {
-    display: flex;
-  }
+  display: flex;
+}
 
 .footer-web-logo {
   font-family: Raleway;
@@ -680,6 +680,10 @@ body {
   margin-left: 93px;
 }
 
+.footer-subscription {
+  display: flex;
+}
+
 .footer-subscription-title {
   display: block;
   margin-bottom: 20px;
@@ -704,16 +708,20 @@ body {
 }
 
 .footer-subscription-text::placeholder {
-    font-size: 16px;
-line-height: 1.25;
-display: flex;
-align-items: center;
-letter-spacing: 0.03em;
-color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .subscription-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: 12px;
+
   width: 200px;
   height: 50px;
   padding: 0;
@@ -734,6 +742,14 @@ color: rgba(255, 255, 255, 0.6);
 .subscription-btn:focus {
   color: var(--main-btn-color);
   background-color: var(--second-accent-color);
+}
+
+.subscription-icon {
+  /* display: flex;
+    align-items: center;
+    justify-content: center; */
+  margin-left: 10px;
+  fill: currentColor;
 }
 
 /* !-----------------------studio------------------------------------------*/
@@ -881,6 +897,8 @@ color: rgba(255, 255, 255, 0.6);
   color: var(--main-text-color);
 }
 
+/*  !---------------MODAL--------------------- */
+
 .backdrop {
   width: 100vw;
   height: 100vh;
@@ -894,8 +912,6 @@ color: rgba(255, 255, 255, 0.6);
   transform: scale(1.5) rotate(180deg);
   transition: transform 500ms;
 }
-
-/*  !---------------MODAL--------------------- */
 
 .modal {
   width: 528px;
@@ -927,6 +943,11 @@ color: rgba(255, 255, 255, 0.6);
   justify-content: center;
 }
 
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+  fill: var(--accent-color);
+}
+
 .is-hidden {
   visibility: hidden;
   opacity: 0;
@@ -945,7 +966,7 @@ color: rgba(255, 255, 255, 0.6);
 }
 
 .modal-form-input {
-  padding-left: 15px;
+  padding-left: 42px;
   padding-right: 15px;
 
   width: 100%;
@@ -953,6 +974,15 @@ color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+}
+
+.modal-form-input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.modal-form-input:focus + .input-icon {
+  fill: var(--accent-color);
 }
 
 .form-input-text {
@@ -965,8 +995,26 @@ color: rgba(255, 255, 255, 0.6);
   color: var(--main-text-color);
 }
 
+.modal-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal-field {
   margin-bottom: 10px;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms linear;
 }
 
 .modal-form-text {
@@ -985,4 +1033,78 @@ color: rgba(255, 255, 255, 0.6);
 
 .modal-form-text::placeholder {
   color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-text:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.modal-field-second {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--main-text-color);
+}
+
+.check-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--main-header-text-color);
+  border-radius: 2px;
+  margin-right: 7px;
+}
+
+.check-icon {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  fill: var(--main-btn-color);
+}
+
+.policy-link {
+  color: var(--accent-color);
+}
+
+.modal-check:checked + .check-text .check-item {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.modal-btn {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+
+  cursor: pointer;
+  background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  color: var(--main-btn-color);
+  border-radius: 4px;
+  transition: color 250ms linear, background-color 250ms linear;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  color: var(--main-btn-color);
+  background-color: var(--second-accent-color);
 }
